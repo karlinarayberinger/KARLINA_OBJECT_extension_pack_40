@@ -1,0 +1,240 @@
+<!--
+/**
+ * file: misophonia_sound_tracks_player_beta.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 05_MAY_2025
+ * license: PUBLIC_DOMAIN
+ */
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MISOPHONIA_SOUND_TRACKS_PLAYER_beta</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+    }
+    .stats {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .player_button {
+      background: #00ff00;
+      color: #000000;
+      border-color: #00ff00;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 5px;
+      padding: 10px;
+      appearance: none;  
+      font-family: monospace;
+      font-size: 16px;
+    }
+    .player_button:hover {
+      background: #00ffff;
+      border-color: #00ffff;
+    }
+  </style>
+</head>
+<body>
+  <!-- static text -->
+  <h1>MISOPHONIA_SOUND_TRACKS_PLAYER_beta</h1>
+  <p><em><span style="background:#ffff00">This application was created by karbytes as a workaround to the (temporary or intermittent) problem of karbytes' Android device not allowing multiple sound files to be played simultaneously while using karbytes' <a style="background: #000000;color: #00ffff" href="http://qkbrwfubnh4knc6kkhx6uepccavpwezdf2al7w2quepe3qociegsi3yd.onion/KARBYTES_BLOG_APPS/SOUND_TRACK_LOOP_COUNTER_THREE/sound_track_looper_three.html" target="_blank" rel="noopener">SOUND_TRACK_LOOPER_THREE</a> dark web application (and that issue started happening between 03_MAY_2025 and 06_MAY_2025).</span> karbytes did notice that the three sound tracks which are designed to play simultaneously and for an indefinitely long time as a result of clicking a single button one time in karbytes' <a style="background: #000000;color: #00ffff" href="http://qkbrwfubnh4knc6kkhx6uepccavpwezdf2al7w2quepe3qociegsi3yd.onion/KARBYTES_BLOG_APPS/ONION_WEB_PAGE_AVAILABILITY_LOGGER/onion_web_page_availability_logger.html" target="_blank" rel="noopener">ONION_WEB_PAGE_AVAILABILITY_LOGGER</a> dark web application seems to work properly on karbytes' Android device in terms of generating that perpetual multi-track "song" but the application seems to terminate the Tor connection shortly after loading the application web page (meaning that attempts to poll a target .onion web address's availability resulted in only "failures" after the one initial "success" which involved the loading of that web page). karbytes thinks that embedded all of the JavaScript in that application's HTML file instead of linking that HTML file to an external JavaScript file prevents the Android device from treating the JavaScript as potentially malicious scripts.</em></p>
+  <p><em>Essentially, the purpose of <strong>MISOPHONIA_SOUND_TRACKS_PLAYER</strong> is to replicate the kinds of sound file selections karbytes would typically make while using <strong>SOUND_TRACK_LOOPER_THREE</strong> to create a portable misophonia-fighting auditory environment which mimics some of the annoying sounds karbytes hears or imagines and thereby makes those sounds seem externalized and repetitive to the extent that karbytes becomes more desensitized to misophonia triggers (at least temporarily and while the sound player app is in use).</em></p>
+  <p><em>Bonus: karbytes included some sound file mixes which karbytes thinks sounds like good music (which makes a refreshing contrast to the sound options which karbytes made intentionally "uglier").</em></p>
+  <p>(In order to minimize the number of function calls per user session of MISOPHONIA_SOUND_TRACKS_PLAYER, only one button per session is allowed to be played. The buttons which are not clicked first are set to hidden after the user clicks on one of the buttons on this web page. Also, clicking on the remaining button more than once is not likely to call the respective function more than once).</p>
+  <p><em><span style="background:#ffff00">(Note that <a style="background: #000000;color: #00ff00" href="http://qkbrwfubnh4knc6kkhx6uepccavpwezdf2al7w2quepe3qociegsi3yd.onion/KARBYTES_BLOG_APPS/MISOPHONIA_SOUND_TRACKS_PLAYER/misophonia_sound_tracks_player_beta.html" target="_blank" rel="noopener">this web page application</a> must be hosted from a dark web server in order to work).</span></em></p>
+  <p><em><span style="background:#ffff00">(Note also that this web page application must be run via a dark web browser such as Tor).</span></em></p>
+  <p><span style="background:#00ffff">Note that this application seems to be having issues possibly due to "too many" function calls and/or "too many" MP3 files (some of which are relatively large). While this application works fine on Desktop machines, karbytes finds that it is not working properly on karbytes' Android mobile device. What karbytes found seems to enable the application to work properly on its Android phone is going into the Android Settings app and force quitting the Tor app process which is still running in the background despite karbytes quitting the application from inside the Tor app. Doing that ensures that Tor is starting with a fresh process each time karbytes starts the Tor browser app (for Android) and loads this web page. <strong>karbytes has since created smaller and simpler versions of this application which are designed specifically to play multiple MP3 files simultaneously on karbytes' Android phone. According to ChatGPT-4o, the Android Tor app seems to only be able to handle 3 or 4 MP3 files at most.</strong></span></p>
+
+  <!-- first button (plays a particular sound file blend) -->
+  <p><input class="player_button" type="button" id="player_button_0" value="play_sound_files_compilation_0()" onclick="play_sound_files_compilation_0()"></p>   
+
+  <!-- first button (plays a particular sound file blend) -->
+  <p><input class="player_button" type="button" id="player_button_1" value="play_sound_files_compilation_1()" onclick="play_sound_files_compilation_1()"></p>   
+
+  <!-- first button (plays a particular sound file blend) -->
+  <p><input class="player_button" type="button" id="player_button_2" value="play_sound_files_compilation_2()" onclick="play_sound_files_compilation_2()"></p>   
+
+  <!-- JavaScript code enables this web page to be interactive and dynamic. -->
+  <script>
+    /**
+     * The JavaScript code which follows is intended to keep this Tor browser tab active
+     * rather than going dormant while that browser tab is treated by the operating system (OS)
+     * as a background process on mobile devices. 
+     * 
+     * On mobile devices such as an Android smartphone, only one browser tab and only one
+     * non-OS software application can be actively featured in the user's "viewport" per
+     * instant. By contrast, on more fully-featured machines such as a Ubuntu laptop computer,
+     * multiple browser tabs and multiple non-OS software applications can be running simultaneously
+     * inside of one "viewport" (i.e. user experience instant).
+     */
+
+    // List of audio file URLs
+    const file_path_root = 'http://qkbrwfubnh4knc6kkhx6uepccavpwezdf2al7w2quepe3qociegsi3yd.onion/KARBYTES_BLOG_APPS/SOUND_TRACK_LOOP_COUNTER_THREE/';
+    const soundTracks_0 = [
+      file_path_root + 'instagram_karbytes_13_june_2023_part_2.mp3', // 50 seconds
+      file_path_root + 'pig_gorl_08_december_2023_part_1.mp3', // 39 seconds
+      file_path_root + 'pig_gorl_02_april_2024_part_1.mp3', // 32 seconds
+      file_path_root + 'pig_gorl_03_november_2023_part_0.mp3', // 26 seconds
+      file_path_root + 'asmr_pig_gorl_simpering_by_karbytes_27mar2025_p0.mp3', // 72 seconds
+      file_path_root + 'asmr_pig_gorl_simpering_by_karbytes_27mar2025_p1.mp3', // 167 seconds
+      file_path_root + 'plaintive_droning_by_karbytes_17march2025_p1.mp3' // 23 seconds
+    ];
+    const soundTracks_1 = [
+      file_path_root + 'instagram_karbytes_13_june_2023_part_2.mp3', // 50 seconds
+      file_path_root + 'pig_gorl_29_may_2023.mp3', // 17 seconds
+      file_path_root + 'pig_gorl_noises_part_0_06_july_2023.mp3', // 36 seconds
+      file_path_root + 'pig_gorl_noises_part_1_06_july_2023.mp3', // 32 seconds
+      file_path_root + 'pig_gorl_03_november_2023_part_0.mp3', // 26 seconds
+      file_path_root + 'pig_boi_24_june_2023.mp3', // 44 seconds
+      file_path_root + 'asmr_pig_gorl_simpering_by_karbytes_27mar2025_p0.mp3', // 72 seconds
+      file_path_root + 'asmr_pig_gorl_simpering_by_karbytes_27mar2025_p1.mp3', // 167 seconds
+      file_path_root + 'plaintive_droning_by_karbytes_17march2025_p1.mp3' // 23 seconds
+    ];
+    const soundTracks_2 = [
+      file_path_root + 'instagram_karbytes_13_june_2023_part_2.mp3', // 50 seconds
+      file_path_root + 'pyramid_meditation_music_kings_chamber_frequencies_[downloaded_from_magnetic_minds_by_karbytes_on_16june2024].mp3', // 1200 seconds
+      file_path_root + 'solfeggio_tones_by_mynoise_dot_net_customized_and_downloaded_by_karbytes_24january2025.mp3', // 302 seconds
+      file_path_root + 'shepardmadness_by_mynoise_dot_net_customized_and_downloaded_by_karbytes_26march2025.mp3', // 302 seconds
+      file_path_root + 'guitar_karbytes_14april2025.mp3', // 233 seconds
+      file_path_root + 'guitar_karbytes_29january2025.mp3' // 150 seconds
+    ];
+
+    // Create and configure audio elements
+    const audioElements_0 = soundTracks_0.map(src => {
+      const audio = new Audio(src);
+      audio.loop = true;
+      audio.volume = 1.0; 
+      return audio;
+    });
+    const audioElements_1 = soundTracks_1.map(src => {
+      const audio = new Audio(src);
+      audio.loop = true;
+      audio.volume = 1.0; 
+      return audio;
+    });
+    const audioElements_2 = soundTracks_2.map(src => {
+      const audio = new Audio(src);
+      audio.loop = true;
+      audio.volume = 1.0; 
+      return audio;
+    });
+
+    /**
+     * Set player_button_0 to hidden after the user clicks on one of the other player buttons in this application.
+     */
+    function hide_player_button_0() {
+      try {
+        let button = document.getElementById("player_button_0");
+        button.style.display = "none";
+      }
+      catch(exception) {
+        console.log("An exception to expected functioning occurred in hide_player_button_0(): " + exception);
+      }
+    }
+
+    /**
+     * Set player_button_1 to hidden after the user clicks on one of the other player buttons in this application.
+     */
+    function hide_player_button_1() {
+      try {
+        let button = document.getElementById("player_button_1");
+        button.style.display = "none";
+      }
+      catch(exception) {
+        console.log("An exception to expected functioning occurred in hide_player_button_1(): " + exception);
+      }
+    }
+
+    /**
+     * Set player_button_2 to hidden after the user clicks on one of the other player buttons in this application.
+     */
+    function hide_player_button_2() {
+      try {
+        let button = document.getElementById("player_button_2");
+        button.style.display = "none";
+      }
+      catch(exception) {
+        console.log("An exception to expected functioning occurred in hide_player_button_2(): " + exception);
+      }
+    }
+
+    /**
+     * This function responds to the event of player_button_0 being clicked 
+     * and causes a particular selection of sound files simultaneously and continuously
+     * (until the respective web browser tab is closed or the system crashes).
+     */
+    function play_sound_files_compilation_0() {
+      hide_player_button_1();
+      hide_player_button_2();
+      startPlayingSoundTracks_0();
+    }
+
+    /**
+     * This function responds to the event of player_button_1 being clicked 
+     * and causes a particular selection of sound files simultaneously and continuously
+     * (until the respective web browser tab is closed or the system crashes).
+     */
+    function play_sound_files_compilation_1() {
+      hide_player_button_0();
+      hide_player_button_2();
+      startPlayingSoundTracks_1();
+    }
+
+    /**
+     * This function responds to the event of player_button_2 being clicked 
+     * and causes a particular selection of sound files simultaneously and continuously
+     * (until the respective web browser tab is closed or the system crashes).
+     */
+    function play_sound_files_compilation_2() {
+      hide_player_button_0();
+      hide_player_button_1();
+      startPlayingSoundTracks_2();
+    }
+
+    // Function to start playback on user interaction 
+    function startPlayingSoundTracks_0() {
+      audioElements_0.forEach(audio => {
+        audio.play().catch(err => {
+          console.warn("Failed to play track:", err);
+        });
+      });
+    }
+
+    // Function to start playback on user interaction
+    function startPlayingSoundTracks_1() {
+      audioElements_1.forEach(audio => {
+        audio.play().catch(err => {
+          console.warn("Failed to play track:", err);
+        });
+      });
+    }
+
+    // Function to start playback on user interaction
+    function startPlayingSoundTracks_2() {
+      audioElements_2.forEach(audio => {
+        audio.play().catch(err => {
+          console.warn("Failed to play track:", err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
